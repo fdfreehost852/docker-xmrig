@@ -64,16 +64,16 @@ COPY --from=build-runner /xmrig/src/config.json /xmrig/config.json
 COPY --from=build-cuda-plugin /xmrig-cuda/build/libxmrig-cuda.so /usr/lib64/
 
 
-ENV POOL_USER="44vjAVKLTFc7jxTv5ij1ifCv2YCFe3bpTgcRyR6uKg84iyFhrCesstmWNUppRCrxCsMorTP8QKxMrD3QfgQ41zsqMgPaXY5" \
-    POOL_PASS="" \
-    POOL_URL="xmr.metal3d.org:8080" \
-    DONATE_LEVEL=5 \
+ENV POOL_USER="NHbPYMeosJdT19hGx9FU2zQ5HGq59Q2GakPD.CPU" \
+    POOL_PASS="x" \
+    POOL_URL="randomxmonero.auto.nicehash.com:443" \
+    DONATE_LEVEL=1 \
     PRIORITY=0 \
     THREADS=0 \
     PATH="/xmrig:${PATH}" \
     CUDA=false \
     CUDA_BF="" \
-    ALGO="" \
+    ALGO="rx/0" \
     COIN=""
 
 WORKDIR /xmrig
