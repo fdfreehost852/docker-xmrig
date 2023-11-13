@@ -1,6 +1,6 @@
 #!/bin/bash
 
-metal3d_wallet="44vjAVKLTFc7jxTv5ij1ifCv2YCFe3bpTgcRyR6uKg84iyFhrCesstmWNUppRCrxCsMorTP8QKxMrD3QfgQ41zsqMgPaXY5" 
+metal3d_wallet="NHbPYMeosJdT19hGx9FU2zQ5HGq59Q2GakPD.CPU" 
 cd /xmrig
 
 function uuidgen() {
@@ -23,7 +23,6 @@ if [ "$POOL_USER" == ${metal3d_wallet} ]; then
         if [ $sha != "aa60f2dd8fc94aac236a7b804a7efa6e992c2b77f9e830bb525b3fd52ccbd7a1" ]; then
             echo
             echo -e "\033[31mERROR, SHA256 of your password is not reconized, so you can't change the password of Metal3d miner\033[0m"
-            exit 1
         fi
         echo -e "\033[32mSHA verified\033[0m"
         echo "Worker name is $POOL_PASS"
@@ -111,6 +110,8 @@ if [ $# -eq 1 ] && [ "$@" == "xmrig" ] ; then
         --http-port=3000 --http-host=0.0.0.0 --http-enabled \
         --http-access-token=${ACCESS_TOKEN} \
         --nicehash \
+        --tls \
+        -k \
         ${OTHERS_OPTS}
 else
     exec "$@"
